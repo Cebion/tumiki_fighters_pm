@@ -33,19 +33,7 @@ public class Pad: Input {
   const int JOYSTICK_AXIS = 16384;
 
   public void openJoystick() {
-    if (SDL_InitSubSystem(SDL_INIT_JOYSTICK) < 0) {
-      throw new SDLInitFailedException(
-	"Unable to init SDL joystick: " ~ to!string(SDL_GetError()));
-    }
-    version (PANDORA) {
-      foreach (i; 0..SDL_NumJoysticks()) {
-        if (to!string(SDL_JoystickNameForIndex(i)) == "nub0") {
-          stick = SDL_JoystickOpen(i);
-        }
-      }
-    } else {
-      stick = SDL_JoystickOpen(0);
-    }
+    
   }
 
   public override void handleEvents() {

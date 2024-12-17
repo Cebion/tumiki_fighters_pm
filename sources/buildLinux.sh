@@ -34,4 +34,4 @@ cd src/abagames/tf
 find . -maxdepth 1 -name \*.d -type f -exec gdc $FLAGS -I../.. \{\} \;
 cd ../../..
 
-gdc -o TUMIKI_Fighters -s -Wl,--gc-sections -static-libphobos import/*.o* import/sdl/*.o* import/bindbc/sdl/*.o* src/abagames/util/*.o* src/abagames/util/bulletml/*.o* src/abagames/util/sdl/*.o* src/abagames/tf/*.o* -lGL -lSDL2_mixer -lSDL2 -lbulletml_d -L./lib/x64
+gdc -o TUMIKI_Fighters -s -Wl,--gc-sections -static-libphobos import/*.o* import/sdl/*.o* import/bindbc/sdl/*.o* src/abagames/util/*.o* src/abagames/util/bulletml/*.o* src/abagames/util/sdl/*.o* src/abagames/tf/*.o* -lGL -lSDL2_mixer -lSDL2 -L./libbulletml/bulletml/src -lbulletml
